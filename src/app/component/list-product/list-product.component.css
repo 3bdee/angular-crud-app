@@ -1,0 +1,23 @@
+.tab-data {
+  background-color: aqua;
+}
+
+table {
+  margin: 20px 50px;
+  width: 90%;
+}
+
+.action-btns {
+  padding-left: 20px;
+}
+
+.action-btns i {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.tabHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}

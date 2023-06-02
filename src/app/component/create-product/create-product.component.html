@@ -1,0 +1,87 @@
+<div class="example-container">
+  <h1 *ngIf="!update">Ajouter Produit</h1>
+  <h1 *ngIf="update">Ajouter Produit</h1>
+  <form
+    method="GET"
+    class="add-form"
+    [formGroup]="createProduct"
+    (ngSubmit)="addEditableProduct()"
+  >
+    <div class="inp">
+      <input
+        type="text"
+        name="nom"
+        placeholder="nom produit"
+        formControlName="nom"
+        class="form-control"
+      />
+      <input
+        type="text"
+        name="date"
+        placeholder="date de péremption"
+        formControlName="date"
+        class="form-control"
+      />
+    </div>
+    <input
+      type="text"
+      name="description"
+      placeholder="description"
+      formControlName="description"
+      class="form-control"
+    />
+    <div class="inp">
+      <input
+        type="number"
+        name="prix-vente"
+        placeholder="prix de vente"
+        formControlName="prix_vente"
+        class="form-control"
+      />
+
+      <input
+        type="number"
+        name="prix-achat"
+        placeholder="prix d'achat"
+        formControlName="prix_achat"
+        class="form-control"
+      />
+    </div>
+    <div class="inp">
+      <input
+        type="text"
+        name="fournisseur"
+        placeholder="fournisseur"
+        formControlName="fournisseur"
+        class="form-control"
+      />
+      <input
+        type="number"
+        name="quantite"
+        placeholder="quantité en stock"
+        formControlName="quantite"
+        class="form-control"
+      />
+    </div>
+    <span
+      *ngIf="submitted && createProduct.invalid"
+      class="badge badge-danger"
+      style="color: red"
+      >champ obliger⛔</span
+    >
+    <button
+      *ngIf="!update"
+      type="submit"
+      class="btn btn-lg btn-dark float-right"
+    >
+      Ajouter
+    </button>
+    <button
+      *ngIf="update"
+      type="submit"
+      class="btn btn-lg btn-dark float-right"
+    >
+      update
+    </button>
+  </form>
+</div>

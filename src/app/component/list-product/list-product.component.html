@@ -1,0 +1,51 @@
+<div class="tab-data">
+  <div class="tabHeader">
+    <h3>List Product</h3>
+    <button
+      class="btn btn-lg btn-dark float-right"
+      routerLink="/create-product"
+    >
+      Add
+    </button>
+  </div>
+
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Description</th>
+        <th scope="col">Prix Achat</th>
+        <th scope="col">Prix Vente</th>
+        <th scope="col">Fournisseur</th>
+        <th scope="col">Date</th>
+        <th scope="col">Quantité</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items$ | async">
+        <td>{{ item.id }}</td>
+        <td>{{ item.nom }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.prix_achat }}</td>
+        <td>{{ item.prix_vente }}</td>
+        <td>{{ item.fournisseur }}</td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.quantite }}</td>
+        <td class="action-btns">
+          <i
+            class="fas fa-edit"
+            style="color: #2b00ff"
+            [routerLink]="['/edit-product/', item.id]"
+          ></i>
+          <i
+            (click)="deleteProduct(item.id)"
+            class="fas fa-trash"
+            style="color: #ff0000"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
