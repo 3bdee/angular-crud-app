@@ -43,4 +43,4 @@ Thumbs.db
 
 
 #firebase config
-/src/environments/*
+src/environments
